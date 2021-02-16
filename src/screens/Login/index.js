@@ -6,6 +6,7 @@ import firebase from 'firebase';
 const {width,height}=Dimensions.get('window')
 import {goToScreen} from '../../utils/navigation'
 import Realm from 'realm';
+import { createState, useState } from '@hookstate/core';
 
 async function onFacebookButtonPress() {
     // Attempt login with permissions

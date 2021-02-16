@@ -22,14 +22,14 @@ const HomeSearch = (props) => {
         </View>
         <View style={styles.row}>
             <View style={styles.iconContainer}>
-            <AntDesign name={"clockcircle"} size={20} color={'#ffffff'}/>
+            <AntDesign name={"clockcircle"} size={13} color={'#ffffff'}/>
 
             </View>
             <Text style={styles.destinationText}>Spin Nightclub</Text>
         </View>
         <View style={styles.row}>
             <View style={[styles.iconContainer,{backgroundColor:'#218cff'}]}>
-            <Entypo name={"home"} size={20} color={'#ffffff'}/>
+            <Entypo name={"home"} size={13} color={'#ffffff'}/>
             </View>
             <Text style={styles.destinationText}>Home</Text>
         </View>

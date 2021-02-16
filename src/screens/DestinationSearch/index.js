@@ -28,7 +28,7 @@ const DestinationSearch = (props) => {
       }}
     //   fetchDetails={true}
       query={{
-        key: 'AIzaSyDp2O17ip5_-WxAQRhPAqkL61bZya1A0tQ',
+        key: 'AIzaSyDE0ssGm5Ff0IuEBp_zOR1lXQ9Vi0lgC1c',
         language: 'en',
       }}
       
@@ -45,7 +45,7 @@ const DestinationSearch = (props) => {
       }}
     //   fetchDetails={true}
       query={{
-        key: 'AIzaSyDp2O17ip5_-WxAQRhPAqkL61bZya1A0tQ',
+        key: 'AIzaSyDE0ssGm5Ff0IuEBp_zOR1lXQ9Vi0lgC1c',
         language: 'en',
       }}
       

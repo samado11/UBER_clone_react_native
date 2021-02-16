@@ -9,7 +9,7 @@ const HomeScreen = (props) => {
     <View>
         <HomeMap />
 
-        <CovidMessage />
+        {/* <CovidMessage /> */}
         <HomeSearch />
         
     </View>

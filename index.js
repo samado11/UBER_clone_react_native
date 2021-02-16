@@ -7,6 +7,8 @@ import DestinationSearch from './src/screens/DestinationSearch'
 import SearchResults from './src/screens/SearchResults'
 import HomeMap from './src/components/HomeMap'
 import Login from './src/screens/Login'
+import UserTypes from './src/screens/userTypes'
+import Driver from './src/screens/Driver'
 import firebase from 'firebase';
 import Realm from 'realm';
 
@@ -31,7 +33,8 @@ Navigation.registerComponent('DestinationSearch', () => DestinationSearch);
 Navigation.registerComponent('SearchResults', () => SearchResults);
 // Navigation.registerComponent('HomeMap', () => HomeMap);
 Navigation.registerComponent('Login', () => Login);
-
+Navigation.registerComponent('UserTypes', () => UserTypes);
+Navigation.registerComponent('Driver', () => Driver);
 
   
 Navigation.events().registerAppLaunchedListener(async () => {
@@ -61,15 +64,21 @@ Navigation.events().registerAppLaunchedListener(async () => {
   });
   let check_log,screen_name
   await Realm.open({
-  schema: [{name: 'Users', properties: {id: 'string',name: 'string',email: 'string'}}]
+  schema: [{name: 'Users', properties: {id: 'string',name: 'string',email: 'string',type: 'string'}}]
   }).then(async realm => {
     check_log = await realm.objects('Users');
     console.log(check_log[0]);
     if(check_log.length>0){
-      screen_name='WelcomeScreen'
+      if(check_log.type=="USER"){
+        screen_name='WelcomeScreen'
+      }
+      else{
+        screen_name='Driver'
+      }
+      
    }
    else{
-     screen_name='Login'
+     screen_name='UserTypes'
    }
   });
   

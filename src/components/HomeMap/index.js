@@ -1,7 +1,8 @@
 import React ,{ useState } from 'react';
-import { View, Text, Image } from 'react-native';
+import { View, Text, Image,Dimensions } from 'react-native';
 import MapView, { PROVIDER_GOOGLE,Marker } from 'react-native-maps';
   
+const {width,height}=Dimensions.get('window')
 const LATITUDE = 30.03825;
 const LONGITUDE = 31.2422;
 const LOCS = [
@@ -13,7 +14,7 @@ const HomeMap = (props) => {
   const [ locs, setLocs] = useState(LOCS);
  
   return (
-    <View style={{height:430,backgroundColor:'#a0abff',justifyContent:'center',alignItems:'center'}}>
+    <View style={{height:height*0.72,backgroundColor:'#a0abff',justifyContent:'center',alignItems:'center'}}>
          <MapView
          style={{
            height:'100%',

@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
    },
    inputText:{
    color:'#434343',
-   fontSize:20,
+   fontSize:15,
    fontWeight:'600'
    },
    timeContainer:{
@@ -32,13 +32,13 @@ const styles = StyleSheet.create({
    },
    iconContainer:{
        backgroundColor:"#b3b3b3",
-       padding:10,
+       padding:5,
        borderRadius:25
    },
    destinationText:{
      marginLeft:10,
      fontWeight:"500",
-     fontSize:16
+     fontSize:13
    }
 
    
