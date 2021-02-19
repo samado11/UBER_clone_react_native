@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Image,View, Text,StyleSheet,Button,Dimensions } from 'react-native';
 import auth from '@react-native-firebase/auth';
 import { LoginManager, AccessToken } from 'react-native-fbsdk';
@@ -6,9 +6,11 @@ import firebase from 'firebase';
 const {width,height}=Dimensions.get('window')
 import {goToScreen} from '../../utils/navigation'
 import Realm from 'realm';
-import { createState, useState } from '@hookstate/core';
+import React, {useEffect, useContext} from 'react';
+import {Context} from '../../utils/store'
 
 async function onFacebookButtonPress() {
+ 
     // Attempt login with permissions
     const result = await LoginManager.logInWithPermissions(["email", "public_profile", "user_friends"]);
     // loginButton.setReadPermissions("email", "public_profile", "user_friends");
@@ -33,17 +35,20 @@ async function onFacebookButtonPress() {
   }
 
 function FacebookSignIn() {
+  const [state, dispatch] = useContext(Context);
   return (
     <View style={styles.container}>
       <Image style={styles.fixed} source={require('../../assets/images/taxi.jpg')}>
 
       </Image>
       <View style={{top:height*0.2}}>
+      <Text style={{color:"white"}}>hhhhhhhhhhhhhhh {state.type}</Text>
+
     <Button
       title="Facebook Login"
       onPress={() => onFacebookButtonPress().then((d) =>{ 
                                                           Realm.open({
-                                                          schema: [{name: 'Users', properties: {id: 'string',name: 'string',email: 'string'}}]
+                                                          schema: [{name: 'Users', properties: {id: 'string',name: 'string',email: 'string',type:'string'}}]
                                                           }).then(realm => {
                                                           realm.write(() => {
                                                           realm.create('Users', {id: d.additionalUserInfo.profile.id,name: d.additionalUserInfo.profile.first_name,email: d.additionalUserInfo.profile.email});

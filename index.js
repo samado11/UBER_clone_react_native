@@ -11,6 +11,7 @@ import UserTypes from './src/screens/userTypes'
 import Driver from './src/screens/Driver'
 import firebase from 'firebase';
 import Realm from 'realm';
+import Store from './src/utils/store'
 
 
 var firebaseConfig = {

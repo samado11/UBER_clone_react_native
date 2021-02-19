@@ -1,13 +1,15 @@
-import React from 'react';
+import React,{useEffect, useContext,  useState } from 'react';
 import { Image,View, Text ,Dimensions,Button } from 'react-native';
 import styles from './styles'
 import firebase from 'firebase';
-import { createState, useState } from '@hookstate/core';
+import {Context} from '../../utils/store'
 import {goToScreen} from '../../utils/navigation'
 
 const {width,height}=Dimensions.get('window')
-const globalState = createState('USER');
+
 const UserTypes = (props) => {
+  const [type,settype] = useState('CLIENT');
+  const [state, dispatch] = useContext(Context);
     const writeUserData=(id,lang,lat)=>{
         firebase.database().ref('Locs/').set({
             id,
@@ -21,9 +23,8 @@ const UserTypes = (props) => {
             console.log('error ' , error)
         })
     }
-    const confirm = ()=>{
-        console.warn('confirmed')
-    }
+          useEffect(() => {dispatch({type: 'SET_TYPE', payload: type});}, []);
+ 
   return (
     <View style={styles.container}>
       <Image style={styles.fixed} source={require('../../assets/images/taxi.jpg')}>
@@ -33,15 +34,16 @@ const UserTypes = (props) => {
     <Button
       
       title="Driver"
-      onPress={() =>  {
-          globalState.set("DRIVER")
+      onPress={() =>
+        {
+          settype('DRIVER')
           goToScreen('Login')
-        
-        }}
+      }}
     />
     <Button
       title="Client"
       onPress={() =>  {
+          settype('CLIENT')
           goToScreen('Login')
         
         }}
@@ -54,3 +56,5 @@ const UserTypes = (props) => {
 
 
 export default UserTypes;
+
+
