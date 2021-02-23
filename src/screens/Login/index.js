@@ -2,13 +2,14 @@
 import { Image,View, Text,StyleSheet,Button,Dimensions } from 'react-native';
 import React from 'react';
 import FacebookSignIn from './FacebookSignIn';
-import  {StateProvider}   from '../../utils/store'
+import  {Context}   from '../../utils/store'
 
 function Des() {
   return (
-  <StateProvider>
+  <Context>
+    
     <FacebookSignIn />
-  </StateProvider>
+  </Context>
 )};
 
 export default Des;

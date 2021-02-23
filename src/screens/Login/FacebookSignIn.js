@@ -44,7 +44,7 @@ function FacebookSignIn() {
 
       </Image>
       <View style={{top:height*0.2}}>
-      <Text style={{color:"white"}}>hhhhhhhhhhhhhhh </Text>
+      <Text style={{color:"white"}}>{globalState.state.type} </Text>
 
     <Button
       title="Facebook Login"

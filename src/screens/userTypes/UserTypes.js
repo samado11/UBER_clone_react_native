@@ -2,7 +2,7 @@ import React,{useEffect, useContext,  useState } from 'react';
 import { Image,View, Text ,Dimensions,Button } from 'react-native';
 import styles from './styles'
 import firebase from 'firebase';
-import {store } from '../../utils/store'
+import {Context } from '../../utils/store'
 import {goToScreen} from '../../utils/navigation'
 
 const {width,height}=Dimensions.get('window')
@@ -25,7 +25,7 @@ const UserTypes = (props) => {
           
 
 
-    const {dispatch} = useContext(store);
+    const {state, dispatch} = useContext(Context);
   return (
     
     <View style={styles.container}>

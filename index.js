@@ -6,8 +6,8 @@ import App from "./App";
 import DestinationSearch from './src/screens/DestinationSearch'
 import SearchResults from './src/screens/SearchResults'
 import HomeMap from './src/components/HomeMap'
-import Login from './src/screens/Login'
-import UserTypes from './src/screens/userTypes'
+import Login from './src/screens/Login/FacebookSignIn'
+import UserTypes from './src/screens/userTypes/UserTypes'
 import Driver from './src/screens/Driver'
 import firebase from 'firebase';
 import Realm from 'realm';

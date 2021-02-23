@@ -1,13 +1,13 @@
 
 import React from 'react';
 import UserTypes from './UserTypes';
-import  {StateProvider}   from '../../utils/store'
+import  {Context}   from '../../utils/store'
 
 function index() {
   return (
-  <StateProvider>
+  <Context>
     <UserTypes />
-  </StateProvider>
+  </Context>
 )};
 
 export default index;
